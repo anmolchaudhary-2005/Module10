@@ -1,5 +1,6 @@
 import re
 
 def check_regex(pattern, text):
-
-    return re.search(pattern, text) is not None
+    if "" in text:
+        return re.match(pattern, text) is not None
+    return re.fullmatch(pattern, text) is not None
